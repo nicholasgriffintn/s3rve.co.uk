@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>s3rve.co.uk</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Courier New', monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+            color: #fff;
+        }
+        .container {
+            text-align: center;
+            position: relative;
+        }
+        .logo {
+            font-size: 4rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: lowercase;
+            margin-bottom: 0.5rem;
+        }
+        .three {
+            color: #00ff00;
+            text-shadow: 0 0 10px #00ff00;
+        }
+        .subtitle {
+            font-size: 1rem;
+            margin-top: 0.5rem;
+            opacity: 0.7;
+        }
+        .subtitle a {
+            color: #00ff00;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+        .subtitle a:hover {
+            opacity: 0.8;
+        }
+        .binary {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1rem;
+            opacity: 0.1;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 100vw;
+        }
+        @media (max-width: 600px) {
+            .logo {
+                font-size: 3rem;
+            }
+            .subtitle {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="binary" id="binary"></div>
+        <div class="logo">
+            s<span class="three">3</span>rve
+        </div>
+        <div class="subtitle">
+            <a href="https://nicholasgriffin.dev" target="_blank" rel="noopener noreferrer">Nicholas Griffin</a>'s service for rendering static content
+        </div>
+    </div>
+    <script nonce="Mjk0NDAxODMyMywzMjk3NTkzNzQ3">
+        function generateBinary() {
+            return Array(1000).fill().map(() => Math.round(Math.random())).join('');
+        }
+        document.getElementById('binary').textContent = generateBinary();
+    </script>
+</body>
+</html>
